@@ -1,0 +1,34 @@
+---
+title: Examples
+assetsPath: /assets/
+contentPath: /assets/content/
+projNamespaceClass: 'starter-proj'
+exampleComponent: {
+    heading: 'Component heading',
+    exampleArr: [
+        {
+            title: 'Item 1', 
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        },
+        {
+            title: 'Item 2', 
+            description: 'Et pharetra pharetra massa massa ultricies mi quis hendrerit.'
+        }
+    ]
+}
+---
+
+<section class="{{projNamespaceClass}}">
+  <h1>{{title}}</h1>
+  <h2>Example handlebars loop:</h2>
+  <ul>
+        <h3>{{exampleComponent.heading}}</h3>
+        {{#each exampleComponent.exampleArr }}
+        <li id="item-{{@index}}">
+            <h3>{{title}}</h3>
+            <p>{{description}}</p>
+        </li>
+        {{/each}}
+        
+  </ul>
+</section>
